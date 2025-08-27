@@ -3,8 +3,8 @@
     "allow": [
       "Bash(cmake:*)",
       "Bash(dir:*)",
-      "Bash(build/debug/tests/TestUtilities.exe)",
-      "Bash(build/release/tests/TestUtilities.exe)",
+      "Bash(build/debug/tests/TestCxxUtils.exe)",
+      "Bash(build/release/tests/TestCxxUtils.exe)",
       "Bash(cmd /c \"cmake . --preset debug\")",
       "Bash(cmd /c \"cmake . --preset release\")",
       "Bash(ctest:*)"

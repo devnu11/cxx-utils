@@ -11,7 +11,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 endif()
 
 cmake_minimum_required(                             VERSION 3.21)
-project(                    Utilities               VERSION 1.0.0 LANGUAGES CXX)
+project(                    CxxUtils                VERSION 1.0.0 LANGUAGES CXX)
 
 add_compile_options(        $<$<CXX_COMPILER_ID:GNU>:-Wall>
                             $<$<CXX_COMPILER_ID:GNU>:-Wextra>
@@ -22,10 +22,10 @@ add_compile_options(        $<$<CXX_COMPILER_ID:GNU>:-Wall>
                             $<$<CXX_COMPILER_ID:MSVC>:/W4>
 )
 
-add_library(                Utilities INTERFACE)
-target_compile_features(    Utilities INTERFACE     cxx_std_23)
-target_include_directories( Utilities INTERFACE     .)
-export(TARGETS              Utilities FILE          Utilities-config.cmake)
+add_library(                CxxUtils  INTERFACE)
+target_compile_features(    CxxUtils  INTERFACE     cxx_std_23)
+target_include_directories( CxxUtils  INTERFACE     .)
+export(TARGETS              CxxUtils  FILE          CxxUtils-config.cmake)
 
 # Only compile the unit tests in the top-level project
 if(PROJECT_IS_TOP_LEVEL)
