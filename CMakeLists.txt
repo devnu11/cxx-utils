@@ -53,4 +53,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 find_package(Threads REQUIRED)
 FetchContent_MakeAvailable(googletest)
 
+# Enable testing at project level
+enable_testing()
+
 add_subdirectory(tests)
