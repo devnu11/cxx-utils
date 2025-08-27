@@ -13,14 +13,9 @@ endif()
 cmake_minimum_required(                             VERSION 3.21)
 project(                    CxxUtils                VERSION 1.0.0 LANGUAGES CXX)
 
-add_compile_options(        $<$<CXX_COMPILER_ID:GNU>:-Wall>
-                            $<$<CXX_COMPILER_ID:GNU>:-Wextra>
-                            $<$<CXX_COMPILER_ID:GNU>:-Wpedantic>
-                            $<$<CXX_COMPILER_ID:Clang>:-Wall>
-                            $<$<CXX_COMPILER_ID:Clang>:-Wextra>
-                            $<$<CXX_COMPILER_ID:Clang>:-Wpedantic>
-                            $<$<CXX_COMPILER_ID:MSVC>:/W4>
-)
+add_compile_options(        "$<$<CXX_COMPILER_ID:GNU>:-Wall;-Wextra;-Wpedantic>"
+                            "$<$<CXX_COMPILER_ID:Clang>:-Wall;-Wextra;-Wpedantic>"
+                            "$<$<CXX_COMPILER_ID:MSVC>:/W4>")
 
 add_library(                CxxUtils  INTERFACE)
 target_compile_features(    CxxUtils  INTERFACE     cxx_std_23)
