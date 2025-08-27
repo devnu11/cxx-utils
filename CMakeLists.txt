@@ -42,7 +42,7 @@ if(PROJECT_IS_TOP_LEVEL)
     FetchContent_MakeAvailable(googletest)
 
     # Enable testing at project level
-    enable_testing()
-
-    add_subdirectory(tests)
+    include(CTest)
 endif()
+
+add_subdirectory(tests)
