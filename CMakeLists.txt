@@ -40,6 +40,7 @@ target_include_directories( Utilities INTERFACE     $<BUILD_INTERFACE:${CMAKE_CU
 )
 export(TARGETS              Utilities FILE          Utilities-config.cmake)
 
+
 # Add GoogleTest using FetchContent
 include(FetchContent)
 FetchContent_Declare(
@@ -49,7 +50,7 @@ FetchContent_Declare(
 )
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-set(gtest_disable_pthreads ON CACHE BOOL "" FORCE)
+find_package(Threads REQUIRED)
 FetchContent_MakeAvailable(googletest)
 
 add_subdirectory(tests)
