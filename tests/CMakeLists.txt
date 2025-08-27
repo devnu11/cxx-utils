@@ -1,0 +1,10 @@
+enable_testing()
+
+add_executable(         TestUtilities               test_pnext_range.cpp)
+target_compile_features(TestUtilities   PRIVATE     cxx_std_20)
+target_link_libraries(  TestUtilities   PRIVATE     Utilities
+                                                    GTest::gtest_main
+                                                    GTest::gtest
+)
+
+add_test(NAME PNextRangeTests COMMAND TestUtilities)
