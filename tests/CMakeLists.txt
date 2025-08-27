@@ -7,4 +7,6 @@ target_link_libraries(  TestUtilities   PRIVATE     Utilities
                                                     GTest::gtest
 )
 
-add_test(NAME PNextRangeTests COMMAND TestUtilities)
+# Use gtest_discover_tests to register individual test cases with CTest
+include(GoogleTest)
+gtest_discover_tests(TestUtilities)
