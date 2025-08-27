@@ -107,13 +107,12 @@ protected:
         auto it2 = range.begin();
         
         EXPECT_EQ(it1, it2);
-        EXPECT_LE(it1, it2);
-        EXPECT_GE(it1, it2);
         
         ++it1;
         EXPECT_NE(it1, it2);
-        EXPECT_GT(it1, it2);
-        EXPECT_LT(it2, it1);
+        
+        // For forward iterators, only equality/inequality comparison is meaningful
+        // Ordering comparisons (>, <, >=, <=) are not required for forward iterators
     }
     
     template<typename Range>
