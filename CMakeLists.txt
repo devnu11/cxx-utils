@@ -24,19 +24,6 @@ export(TARGETS              CxxUtils  FILE          CxxUtils-config.cmake)
 
 # Only compile the unit tests in the top-level project
 if(PROJECT_IS_TOP_LEVEL)
-    # Add GoogleTest using FetchContent
-    include(FetchContent)
-    FetchContent_Declare(
-        googletest
-        GIT_REPOSITORY https://github.com/google/googletest.git
-        GIT_TAG        v1.15.2
-    )
-
-    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-    find_package(Threads REQUIRED)
-    FetchContent_MakeAvailable(googletest)
-
-    # Enable testing at project level
     include(CTest)
 endif()
 
