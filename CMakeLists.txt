@@ -24,9 +24,7 @@ add_compile_options(        $<$<CXX_COMPILER_ID:GNU>:-Wall>
 
 add_library(                Utilities INTERFACE)
 target_compile_features(    Utilities INTERFACE     cxx_std_23)
-target_include_directories( Utilities INTERFACE     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-                                                    $<INSTALL_INTERFACE:include>
-)
+target_include_directories( Utilities INTERFACE     .)
 export(TARGETS              Utilities FILE          Utilities-config.cmake)
 
 # Only compile the unit tests in the top-level project
